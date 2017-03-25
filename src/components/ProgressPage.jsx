@@ -57,6 +57,7 @@ class Progress extends React.Component {
     }
 
 
+
     renderEvents() {
         return this.state.events.map((event, index) => {
             return (
@@ -80,7 +81,7 @@ class Progress extends React.Component {
                             <div className="panel-body">
                                 Date: {event.Event.localDate}
                             </div>
-                            <CommitButton eventId={event.EventId} onClick={this.displayModal} />
+                            <CommitButton eventId={event.EventId} />
 
                             <Line percent={event.Event.commits} strokeWidth="2" strokeColor="#ED3E2F" style={{ width: '90%' }} /> {event.Event.commits}%
 

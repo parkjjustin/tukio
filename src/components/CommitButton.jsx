@@ -26,7 +26,18 @@ class CommitButton extends React.Component {
         //     address: eventAddress,
         //     venue: eventVenue,
         //     user_id: userID
-        // }
+        // }    displayModal() {
+        let modal = document.getElementById('commitModal');
+        modal.style.display = "block";
+        window.onclick = (event) => {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // let span = document.querySelector("close");
+        // modal.style.display = "none";
+
 
         if (this.props.auth.user.id) {
             helpers.commitToBuy(userID, eventId).then(response => {
